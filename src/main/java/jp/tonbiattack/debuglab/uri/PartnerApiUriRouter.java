@@ -16,7 +16,7 @@ public class PartnerApiUriRouter {
     }
 
     public RouteOutcome routeInvoice(String invoiceId) {
-        return acceptIfInsideApiVersion(baseUri.resolve("/invoices/" + invoiceId));
+        return acceptIfInsideApiVersion(baseUri.resolve("invoices/" + invoiceId));
     }
 
     public URI lastAcceptedUri() {
