@@ -1,0 +1,124 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----< jp.tonbiattack.debuglab:java-uri-resolve-leading-slash-lab >-----
+[INFO] Building java-uri-resolve-leading-slash-lab 1.0.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ java-uri-resolve-leading-slash-lab ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/ubuntu/java-uri-resolve-leading-slash-lab/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.13.0:compile (default-compile) @ java-uri-resolve-leading-slash-lab ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 2 source files with javac [debug release 21] to target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ java-uri-resolve-leading-slash-lab ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/ubuntu/java-uri-resolve-leading-slash-lab/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.13.0:testCompile (default-testCompile) @ java-uri-resolve-leading-slash-lab ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 2 source files with javac [debug release 21] to target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.5.3:test (default-test) @ java-uri-resolve-leading-slash-lab ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running jp.tonbiattack.debuglab.uri.PartnerApiUriRouterTest
+[ERROR] Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.060 s <<< FAILURE! -- in jp.tonbiattack.debuglab.uri.PartnerApiUriRouterTest
+[ERROR] jp.tonbiattack.debuglab.uri.PartnerApiUriRouterTest.invoiceRoute_keepsTheApiVersionPathAndUpdatesAcceptedState -- Time elapsed: 0.010 s <<< FAILURE!
+org.opentest4j.MultipleFailuresError: 
+Multiple Failures (3 failures)
+	org.opentest4j.AssertionFailedError: 請求書URIをAPIバージョン配下としてルーティングする ==> expected: <ROUTED_TO_API_VERSION> but was: <OUTSIDE_API_VERSION>
+	org.opentest4j.AssertionFailedError: 最後に採用したURIは/v1/の下に請求書IDを持つ ==> expected: <https://api.example.test/v1/invoices/42> but was: <https://api.example.test/v1/health>
+	org.opentest4j.AssertionFailedError: healthと請求書URIの二件を採用する ==> expected: <2> but was: <1>
+	at org.junit.jupiter.api.AssertAll.assertAll(AssertAll.java:80)
+	at org.junit.jupiter.api.AssertAll.assertAll(AssertAll.java:44)
+	at org.junit.jupiter.api.AssertAll.assertAll(AssertAll.java:38)
+	at org.junit.jupiter.api.Assertions.assertAll(Assertions.java:2944)
+	at jp.tonbiattack.debuglab.uri.PartnerApiUriRouterTest.invoiceRoute_keepsTheApiVersionPathAndUpdatesAcceptedState(PartnerApiUriRouterTest.java:19)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	Suppressed: org.opentest4j.AssertionFailedError: 請求書URIをAPIバージョン配下としてルーティングする ==> expected: <ROUTED_TO_API_VERSION> but was: <OUTSIDE_API_VERSION>
+		at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+		at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+		at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+		at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+		at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1156)
+		at jp.tonbiattack.debuglab.uri.PartnerApiUriRouterTest.lambda$invoiceRoute_keepsTheApiVersionPathAndUpdatesAcceptedState$0(PartnerApiUriRouterTest.java:20)
+		at org.junit.jupiter.api.AssertAll.lambda$assertAll$0(AssertAll.java:68)
+		at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+		at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
+		at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+		at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+		at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+		at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+		at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+		at org.junit.jupiter.api.AssertAll.assertAll(AssertAll.java:77)
+		... 7 more
+	Suppressed: org.opentest4j.AssertionFailedError: 最後に採用したURIは/v1/の下に請求書IDを持つ ==> expected: <https://api.example.test/v1/invoices/42> but was: <https://api.example.test/v1/health>
+		at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+		at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+		at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+		at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+		at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1156)
+		at jp.tonbiattack.debuglab.uri.PartnerApiUriRouterTest.lambda$invoiceRoute_keepsTheApiVersionPathAndUpdatesAcceptedState$1(PartnerApiUriRouterTest.java:22)
+		at org.junit.jupiter.api.AssertAll.lambda$assertAll$0(AssertAll.java:68)
+		at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+		at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
+		at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+		at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+		at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+		at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+		at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+		at org.junit.jupiter.api.AssertAll.assertAll(AssertAll.java:77)
+		... 7 more
+	Suppressed: org.opentest4j.AssertionFailedError: healthと請求書URIの二件を採用する ==> expected: <2> but was: <1>
+		at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+		at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+		at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+		at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+		at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:563)
+		at jp.tonbiattack.debuglab.uri.PartnerApiUriRouterTest.lambda$invoiceRoute_keepsTheApiVersionPathAndUpdatesAcceptedState$2(PartnerApiUriRouterTest.java:25)
+		at org.junit.jupiter.api.AssertAll.lambda$assertAll$0(AssertAll.java:68)
+		at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+		at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
+		at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+		at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+		at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+		at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+		at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+		at org.junit.jupiter.api.AssertAll.assertAll(AssertAll.java:77)
+		... 7 more
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Failures: 
+[ERROR]   PartnerApiUriRouterTest.invoiceRoute_keepsTheApiVersionPathAndUpdatesAcceptedState:19 Multiple Failures (3 failures)
+	org.opentest4j.AssertionFailedError: 請求書URIをAPIバージョン配下としてルーティングする ==> expected: <ROUTED_TO_API_VERSION> but was: <OUTSIDE_API_VERSION>
+	org.opentest4j.AssertionFailedError: 最後に採用したURIは/v1/の下に請求書IDを持つ ==> expected: <https://api.example.test/v1/invoices/42> but was: <https://api.example.test/v1/health>
+	org.opentest4j.AssertionFailedError: healthと請求書URIの二件を採用する ==> expected: <2> but was: <1>
+[INFO] 
+[ERROR] Tests run: 2, Failures: 1, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.706 s
+[INFO] Finished at: 2026-08-19T13:47:21Z
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.5.3:test (default-test) on project java-uri-resolve-leading-slash-lab: There are test failures.
+[ERROR] 
+[ERROR] See /home/ubuntu/java-uri-resolve-leading-slash-lab/target/surefire-reports for the individual test results.
+[ERROR] See dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
